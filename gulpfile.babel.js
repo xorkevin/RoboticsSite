@@ -14,8 +14,8 @@ import uglify from 'gulp-uglify';
 //PATHS//
 const PATH = {
   HTML: 'app/*.html',
-  ALL: ['app/js/*.js', 'app/js/**/*.js', 'app/index.html'],
-  JS: 'app/js/main.js',
+  ALL: ['app/js/*.jsx', 'app/js/**/*.jsx', 'app/index.html'],
+  JS: 'app/js/main.jsx',
   JSDIR: 'app/js',
   MINIFIED_OUT: 'build.min.js',
   DEST: 'dist',
@@ -27,12 +27,15 @@ const PATH = {
 let browserSync = bsync.create()
 
 let bundlejs = ()=>{
-  gutil.log('Compiling JS...');
   return jsbundler.bundle()
-        .pipe(source(PATH.BUNDLE))
-        // .pipe(uglify())
-        .pipe(gulp.dest(PATH.DEST))
-        .pipe(browserSync.stream({once: true}));
+    .on("error", function(err){
+      gutil.log(err.toString());
+      this.emit('end');
+    })
+    .pipe(source(PATH.BUNDLE))
+    // .pipe(uglify()) not compatible with streams
+    .pipe(gulp.dest(PATH.DEST))
+    .pipe(browserSync.stream({once: true}));
 };
 
 let jsbundler = watchify(browserify(PATH.JS, watchify.args));
@@ -46,7 +49,6 @@ gulp.task('build-js', ()=>{
 });
 
 gulp.task('build-html', ()=>{
-  gutil.log('Compiling HTML...');
   gulp.src(PATH.HTML)
     .pipe(gulp.dest(PATH.DEST))
     .pipe(browserSync.reload({stream: true}));
@@ -66,3 +68,5 @@ gulp.task('browser-sync', ()=>{
 
 
 gulp.task('serve', ['build', 'browser-sync']);
+
+gulp.task('default', ['serve']);
