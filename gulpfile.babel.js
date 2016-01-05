@@ -15,18 +15,20 @@ import size from 'gulp-size';
 
 //CONFIG//
 const CONFIG = {
-  production: false //set true if in production mode
+  production: true //set true if in production mode
 };
 
 
 //PATHS//
 const PATH = {
   HTML: 'app/*.html',
+  ASSETS: 'app/assets/**',
   ALL: ['app/js/*.jsx', 'app/js/**/*.jsx', 'app/index.html'],
   JS: 'app/js/main.jsx',
   JSDIR: 'app/js',
   MINIFIED_OUT: 'build.min.js',
   DEST: 'dist',
+  DEST_ASSETS: 'dist/assets',
   BUNDLE: 'bundle.js'
 };
 
@@ -35,17 +37,20 @@ const PATH = {
 let browserSync = bsync.create()
 
 let bundlejs = ()=>{
-  return jsbundler.bundle()
+  let k = jsbundler.bundle()
     .on("error", function(err){
       gutil.log(err.toString());
       this.emit('end');
     })
     .pipe(source(PATH.BUNDLE))
-    .pipe(buffer())
-    // .pipe(uglify())
-    .pipe(size())
+    .pipe(buffer());
+  if(CONFIG.production){
+    k = k.pipe(uglify());
+  }
+    k = k.pipe(size())
     .pipe(gulp.dest(PATH.DEST))
     .pipe(browserSync.stream({once: true}));
+    return k;
 };
 
 let jsbundler = watchify(browserify(PATH.JS, watchify.args));
@@ -65,7 +70,12 @@ gulp.task('build-html', ()=>{
     .pipe(browserSync.reload({stream: true}));
 });
 
-gulp.task('build', ['build-html', 'build-js']);
+gulp.task('build-assets', ()=>{
+  gulp.src(PATH.ASSETS)
+    .pipe(gulp.dest(PATH.DEST_ASSETS));
+})
+
+gulp.task('build', ['build-html', 'build-assets', 'build-js']);
 
 gulp.task('browser-sync', ['build'], ()=>{
     browserSync.init({
