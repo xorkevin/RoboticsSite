@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './creator.css';
+
 export default class CreatorComponent extends React.Component{
   static get propTypes() {
     return {
@@ -30,9 +32,7 @@ export default class CreatorComponent extends React.Component{
   }
 
   render(){
-    console.log('hello');
-    console.log(this.props.names);
-    return (<div>
+    return (<div className='creator-text'>
       created with &hearts; by {this.nameArrToStr(this.props.names)}
     </div>);
   }

@@ -2,13 +2,21 @@
 import gulp from 'gulp';
 import gutil from 'gulp-util';
 import source from 'vinyl-source-stream';
+import buffer from 'vinyl-buffer';
 import babelify from 'babelify';
 import watchify from 'watchify';
 import browserify from 'browserify';
+import uglify from 'gulp-uglify';
 
 import bsync from 'browser-sync';
 
-import uglify from 'gulp-uglify';
+import size from 'gulp-size';
+
+
+//CONFIG//
+const CONFIG = {
+  production: false //set true if in production mode
+};
 
 
 //PATHS//
@@ -33,13 +41,16 @@ let bundlejs = ()=>{
       this.emit('end');
     })
     .pipe(source(PATH.BUNDLE))
-    // .pipe(uglify()) not compatible with streams
+    .pipe(buffer())
+    // .pipe(uglify())
+    .pipe(size())
     .pipe(gulp.dest(PATH.DEST))
     .pipe(browserSync.stream({once: true}));
 };
 
 let jsbundler = watchify(browserify(PATH.JS, watchify.args));
 jsbundler.transform(babelify, {presets: ["es2015", "react"]});
+jsbundler.transform('browserify-css', { autoInject: true, minify: true });
 jsbundler.on('update', bundlejs);
 
 
@@ -56,7 +67,7 @@ gulp.task('build-html', ()=>{
 
 gulp.task('build', ['build-html', 'build-js']);
 
-gulp.task('browser-sync', ()=>{
+gulp.task('browser-sync', ['build'], ()=>{
     browserSync.init({
         server: {
             baseDir: PATH.DEST
