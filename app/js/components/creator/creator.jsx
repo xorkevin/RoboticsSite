@@ -5,7 +5,17 @@ import './creator.css';
 export default class CreatorComponent extends React.Component{
   static get propTypes() {
     return {
-      names: React.PropTypes.arrayOf(React.PropTypes.string).isRequired
+      names: React.PropTypes.arrayOf(React.PropTypes.string).isRequired,
+      startYear: React.PropTypes.number
+    };
+  }
+
+  static get route(){
+    return {
+      path: '/creator',
+      component: CreatorComponent,
+      // indexRoute: {component: component},
+      // childRoutes: []
     };
   }
 
@@ -32,8 +42,9 @@ export default class CreatorComponent extends React.Component{
   }
 
   render(){
-    return (<div className='creator-text'>
-      created with &hearts; by {this.nameArrToStr(this.props.names)}
-    </div>);
+    return <div className='creator-text'>
+      created with &hearts; by {this.nameArrToStr(this.props.names)}<br/>
+      &copy; {this.props.startYear} - {new Date().getFullYear()}
+    </div>;
   }
 }

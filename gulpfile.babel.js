@@ -15,7 +15,7 @@ import size from 'gulp-size';
 
 //CONFIG//
 const CONFIG = {
-  production: true //set true if in production mode
+  production: false //set true if in production mode
 };
 
 

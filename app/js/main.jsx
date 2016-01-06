@@ -1,10 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {Router, browserHistory} from 'react-router';
 
 import AppComponent from './components/app/app.jsx';
 
-let config = {
-  creators: ['Kevin']
+const propsConfig = {
+  config: {
+    creators: ['Kevin'],
+    startYear: 2015
+  }
 };
 
-ReactDOM.render(<AppComponent config={config} />, document.getElementById('app'));
+ReactDOM.render(<Router history={browserHistory} routes={AppComponent.injectorRoute(propsConfig)} />, document.getElementById('app'));
