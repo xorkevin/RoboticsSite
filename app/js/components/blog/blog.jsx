@@ -1,13 +1,11 @@
 import React from 'react';
+import {Route} from 'react-router';
 
 export default class BlogComponent extends React.Component {
   static get route(){
-    return {
-      path: '/blog',
-      component: BlogComponent,
-      // indexRoute: {component: component},
-      // childRoutes: []
-    };
+    return (
+      <Route path='blog' component={BlogComponent}/>
+    );
   }
 
   render(){

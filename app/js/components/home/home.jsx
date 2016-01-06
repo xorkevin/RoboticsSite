@@ -1,13 +1,11 @@
 import React from 'react';
+import {Route} from 'react-router';
 
 export default class HomeComponent extends React.Component {
   static get route(){
-    return {
-      path: '/home',
-      component: HomeComponent,
-      // indexRoute: {component: component},
-      // childRoutes: []
-    };
+    return (
+      <Route path='home' component={HomeComponent}/>
+    );
   }
 
   render(){
