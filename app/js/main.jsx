@@ -10,3 +10,13 @@ ReactDOM.render(
     {AppComponent.route}
   </Router>,
   document.getElementById('app'));
+
+/*
+
+Todo:
+
+- navbar animation on scroll
+- router with redux
+- reduxify the app 
+
+*/
