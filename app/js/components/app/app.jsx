@@ -1,5 +1,5 @@
 import React from 'react';
-import {Route, IndexRoute, Redirect, createRoutes} from 'react-router';
+import {Route, IndexRoute, Redirect} from 'react-router';
 
 import NavComponent from '../nav/nav.jsx';
 import CreatorComponent from '../creator/creator.jsx';

@@ -17,7 +17,7 @@ export default class CreatorComponent extends React.Component{
     );
   }
 
-  nameArrToStr(nameArr){
+  static nameArrToStr(nameArr){
     let k = '';
     let len = nameArr.length;
     switch(len){
@@ -42,7 +42,7 @@ export default class CreatorComponent extends React.Component{
   render(){
     let {names, startYear} = this.props;
     return <div className='creator-text'>
-      created with &hearts; by {this.nameArrToStr(names)}<br/>
+      created with &hearts; by {CreatorComponent.nameArrToStr(names)}<br/>
       &copy; {startYear} - {new Date().getFullYear()}
     </div>;
   }
