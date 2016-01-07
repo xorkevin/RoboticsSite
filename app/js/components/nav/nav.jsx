@@ -1,9 +1,6 @@
 import React from 'react';
 import {Route} from 'react-router';
 
-import {Navbar, Nav, NavItem} from 'react-bootstrap';
-import {LinkContainer, IndexLinkContainer} from 'react-router-bootstrap';
-
 export default class NavComponent extends React.Component {
   static get route(){
     return (
@@ -12,11 +9,11 @@ export default class NavComponent extends React.Component {
   }
 
   static pathWrap(jsx, path, index){
-    if(index){
-      return <IndexLinkContainer to={path}>{jsx}</IndexLinkContainer>;
-    } else {
-      return <LinkContainer to={path}>{jsx}</LinkContainer>;
-    }
+    // if(index){
+    //   return <IndexLinkContainer to={path}>{jsx}</IndexLinkContainer>;
+    // } else {
+    //   return <LinkContainer to={path}>{jsx}</LinkContainer>;
+    // }
   }
 
   render(){
