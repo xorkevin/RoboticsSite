@@ -1,0 +1,41 @@
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css");
+@import url("https://storage.googleapis.com/code.getmdl.io/1.0.4/material.blue_grey-light_blue.min.css");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css");
+@import url("https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/flatly/bootstrap.min.css");
+
+.reset-padding {
+  padding: 0;
+}
+
+.table-full-width {
+  width: 100%;
+}
+
+.card-row {
+  padding: 15px;
+}
+.card-full-width {
+  width: 100%;
+}
+.card-text-black {
+  color: #2C3E50;
+}
+.card-height-resize {
+  min-height: 0;
+}
+
+.vcenter-parent {
+  vertical-align: middle;
+  text-align: center;
+}
+.vcenter-parent:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+.vcenter-child {
+  display: inline-block;
+  vertical-align: middle;
+}

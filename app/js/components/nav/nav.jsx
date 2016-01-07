@@ -1,5 +1,7 @@
 import React from 'react';
-import {Route} from 'react-router';
+import {Route, Link, IndexLink} from 'react-router';
+
+import './nav.css';
 
 export default class NavComponent extends React.Component {
   static get route(){
@@ -18,16 +20,33 @@ export default class NavComponent extends React.Component {
 
   render(){
     let {paths, logo} = this.props;
-    return <Navbar>
-      <Navbar.Header>
-        <Navbar.Brand>
-          {NavComponent.pathWrap(<img src={logo.img}/>, logo.path, logo.index)}
-        </Navbar.Brand>
-      </Navbar.Header>
-      <Nav>
-        <NavItem eventKey={1} href="#">Link</NavItem>
-        <NavItem eventKey={2} href="#">Link</NavItem>
-      </Nav>
-    </Navbar>;
+    return <nav className="navbar navbar-default navbar-fixed-top main-nav main-nav-fill-regular">
+      <div className="container-fluid">
+
+        <div className="navbar-header">
+          <button className="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+            <span className="sr-only">Toggle navigation</span>
+            <span className="icon-bar"></span>
+            <span className="icon-bar"></span>
+            <span className="icon-bar"></span>
+          </button>
+          <a className="navbar-brand"><img src="assets/MinimalLogoWeb.png" width="32px" height="32px"/></a>
+        </div>
+
+        <div className="collapse navbar-collapse" id="navbar-collapse-1">
+          <ul className="nav navbar-nav">
+            <li><a><h6>Home</h6></a></li>
+            <li><a><h6>About</h6></a></li>
+            <li><a><h6>Blog</h6></a></li>
+            <li><a><h6>Photos</h6></a></li>
+            <li><a><h6>Leadership</h6></a></li>
+          </ul>
+
+          <ul className="nav navbar-nav navbar-right">
+            <li><a><h6>Sponsors</h6></a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
   }
 }

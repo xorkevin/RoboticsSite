@@ -1,8 +1,11 @@
 import React from 'react';
 import {Route, IndexRoute, Redirect} from 'react-router';
 
+import '../../../styles/bootstrapMdlUtil.css';
+
 import NavComponent from '../nav/nav.jsx';
 import CreatorComponent from '../creator/creator.jsx';
+import FooterComponent from '../footer/footer.jsx';
 import DoesNotExistComponent from '../doesnotexist/doesnotexist.jsx';
 import HomeComponent from '../home/home.jsx';
 import BlogComponent from '../blog/blog.jsx';
@@ -36,6 +39,7 @@ export default class AppComponent extends React.Component{
     return <div>
       <NavComponent logo={config.logo} paths={config.paths}/>
       {this.props.children}
+      <FooterComponent/>
       <CreatorComponent names={config.creators} startYear={config.startYear}/>
     </div>;
   }

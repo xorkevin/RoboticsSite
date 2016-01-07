@@ -1,0 +1,20 @@
+/* navbar */
+.main-nav {
+
+}
+.main-nav-fill-transparent {
+  background: transparent;
+  -webkit-transition: background 250ms linear;
+  -moz-transition: background 250ms linear;
+  -o-transition: background 250ms linear;
+  -ms-transition: background 250ms linear;
+  transition: background 250ms linear;
+}
+.main-nav-fill-regular {
+  background: rgba(44,62,80,0.91);
+  -webkit-transition: background 250ms linear;
+  -moz-transition: background 250ms linear;
+  -o-transition: background 250ms linear;
+  -ms-transition: background 250ms linear;
+  transition: background 250ms linear;
+}
