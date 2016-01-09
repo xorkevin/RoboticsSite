@@ -5,9 +5,11 @@
 ## Todo
 
 - [x] navbar animation on scroll
-- [ ] navbar update links from config
+- [x] navbar update links from config
 - [ ] reduxify the app
 - [ ] use redux for updating blog state
-- [ ] header countdown
+- [x] header countdown
+  - [ ] need to pass configuration down
 - [ ] front page photo update from flickr
 - [ ] timeline
+- [ ] id navigation on page

@@ -3,6 +3,15 @@ import {Route} from 'react-router';
 
 import HeaderComponent from '../header/header.jsx';
 
+import CountdownComponent from '../countdown/countdown.jsx';
+
+const t = {
+  message: 'End of Season:',
+  endTime: '2016-02-23T23:59:59-08:00',
+  format: 'DD | HH : mm : ss',
+  interval: 500 //in ms
+};
+
 export default class HomeComponent extends React.Component {
   static get route(){
     return (
@@ -12,7 +21,7 @@ export default class HomeComponent extends React.Component {
 
   render(){
     return <div>
-      <HeaderComponent/>
+      <HeaderComponent utilitySpace={<span><h5>{t.message}</h5><h4><CountdownComponent endTime={t.endTime} format={t.format} interval={t.interval}/></h4></span>}/>
       <div className="container">
 
         <div className="page-header" id="homeSection-about">

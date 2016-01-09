@@ -21,9 +21,7 @@ export default class HeaderComponent extends React.Component {
               <img src="assets/PrototypeLogoWhite.png" height="200px"/>
               <h5>FRC Team 2854</h5>
               <h5 className="main-header-text-accent">Evergreen Valley High School Robotics</h5>
-              <h5>
-                {/*<!-- OCTOBER 10, 2015 | 9:00AM - 9:00PM POTENTIAL TIMER HERE-->*/}
-              </h5>
+              {(this.props.utilitySpace) || ''}
               <br/>
               <p><a className="btn btn-primary btn-lg">Support us</a></p>
               <p>

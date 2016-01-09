@@ -23,6 +23,12 @@ const appProps = {
     ],
     logo: {img: 'assets/MinimalLogoWeb.png', path: '/'},
     navHeight: 256
+  },
+  countdown: {
+    message: 'End of Season',
+    endTime: '2016-02-23T23:59:59-08:00',
+    format: 'DD | HH : mm : ss',
+    interval: 500 //in ms
   }
 };
 
