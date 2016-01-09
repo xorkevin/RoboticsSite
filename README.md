@@ -5,6 +5,7 @@
 ## Todo
 
 - [x] navbar animation on scroll
+- [ ] navbar update links from config
 - [ ] reduxify the app
 - [ ] use redux for updating blog state
 - [ ] header countdown
