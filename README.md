@@ -11,5 +11,6 @@
 - [x] header countdown
   - [ ] need to pass configuration down
 - [ ] front page photo update from flickr
+	- [ ] more photos on front page
 - [ ] timeline
 - [ ] id navigation on page
