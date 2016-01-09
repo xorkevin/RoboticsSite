@@ -1,22 +1,17 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import {Route} from 'react-router';
+import {createSelector} from 'reselect';
+import {pushPath} from 'redux-simple-router'
 import $ from 'jquery';
 
 import './nav.css';
 
-export default class NavComponent extends React.Component {
+class NavComponent extends React.Component {
   static get route(){
     return (
       <Route path='nav' component={NavComponent}/>
     );
-  }
-
-  pathWrap(jsx, path, index){
-    // if(index){
-    //   return <IndexLinkContainer to={path}>{jsx}</IndexLinkContainer>;
-    // } else {
-    //   return <LinkContainer to={path}>{jsx}</LinkContainer>;
-    // }
   }
 
   static get listenID(){
@@ -40,8 +35,14 @@ export default class NavComponent extends React.Component {
     }
   }
 
+  dispatchPath(path){
+    return(()=>{this.props.dispatch(pushPath(path))});
+  }
+
   render(){
-    let {paths, logo} = this.props;
+    // let {dispatch, routePath} = this.props; currently not used
+    let {paths, pathsRight, logo} = this.props;
+
     return <nav className='navbar navbar-default navbar-fixed-top main-nav main-nav-fill-transparent'>
       <div className='container-fluid'>
 
@@ -52,16 +53,14 @@ export default class NavComponent extends React.Component {
             <span className='icon-bar'></span>
             <span className='icon-bar'></span>
           </button>
-          <a className='navbar-brand'><img src='assets/MinimalLogoWeb.png' width='32px' height='32px'/></a>
+          <a className='navbar-brand' onClick={this.dispatchPath(logo.path)}><img src={logo.img} width='32px' height='32px'/></a>
         </div>
 
         <div className='collapse navbar-collapse' id='navbar-collapse-1'>
           <ul className='nav navbar-nav'>
-            <li><a><h6>Home</h6></a></li>
-            <li><a><h6>About</h6></a></li>
-            <li><a><h6>Blog</h6></a></li>
-            <li><a><h6>Photos</h6></a></li>
-            <li><a><h6>Leadership</h6></a></li>
+            {paths.map((element)=>{
+              return <li><a onClick={this.dispatchPath(element.path)}><h6>{element.title}</h6></a></li>
+            })}
           </ul>
 
           <ul className='nav navbar-nav navbar-right'>
@@ -72,3 +71,15 @@ export default class NavComponent extends React.Component {
     </nav>
   }
 }
+
+const selectRoutePath = (state)=>{
+  return state.routing.path;
+};
+
+const select = createSelector([selectRoutePath], (routePath)=>{
+  return {
+    routePath
+  };
+})
+
+export default connect(select)(NavComponent)

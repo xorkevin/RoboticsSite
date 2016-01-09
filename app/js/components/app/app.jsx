@@ -15,10 +15,13 @@ const appProps = {
     creators: ['Kevin'],
     startYear: 2015,
     paths: [
-      {title: 'Home', path: '/', index: true},
+      {title: 'Home', path: '/'},
       {title: 'Blog', path: '/blog'}
     ],
-    logo: {img: 'assets/MinimalLogoWeb.png', path: '/', index: true},
+    pathsRight: [
+
+    ],
+    logo: {img: 'assets/MinimalLogoWeb.png', path: '/'},
     navHeight: 256
   }
 };
