@@ -4,31 +4,21 @@ import {Router, useRouterHistory} from 'react-router';
 import createHashHistory from 'history/lib/createHashHistory';
 import {createStore, combineReducers} from 'redux';
 import {Provider} from 'react-redux';
-import {syncReduxAndRouter, routeReducer} from 'react-simple-router';
-// import reducers from '<reducers>';
+import {syncReduxAndRouter, routeReducer} from 'redux-simple-router';
 
 import AppComponent from './components/app/app.jsx';
+import reducers from './components/app/appreducer.jsx';
 
 
-const reducer = combineReducers({/*app reducer file*/});
+const reducer = combineReducers(Object.assign({}, ...reducers, {routing: routeReducer}));
 const store = createStore(reducer);
-const history = createHashHistory({queryKey: false});
+const history = useRouterHistory(createHashHistory)({queryKey: false});
 syncReduxAndRouter(history, store);
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router history={useRouterHistory(history)}>
+    <Router history={history}>
       {AppComponent.route}
     </Router>
   </Provider>,
   document.getElementById('app'));
-
-/*
-
-Todo:
-
-- navbar animation on scroll
-- router with redux
-- reduxify the app
-
-*/

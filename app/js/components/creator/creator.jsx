@@ -4,20 +4,13 @@ import {Route} from 'react-router';
 import './creator.css';
 
 export default class CreatorComponent extends React.Component{
-  static get propTypes() {
-    return {
-      names: React.PropTypes.arrayOf(React.PropTypes.string).isRequired,
-      startYear: React.PropTypes.number
-    };
-  }
-
   static get route(){
     return (
       <Route path='creator' component={CreatorComponent}/>
     );
   }
 
-  static nameArrToStr(nameArr){
+  nameArrToStr(nameArr){
     let k = '';
     let len = nameArr.length;
     switch(len){
@@ -42,7 +35,7 @@ export default class CreatorComponent extends React.Component{
   render(){
     let {names, startYear} = this.props;
     return <div className='creator-text'>
-      created with &hearts; by {CreatorComponent.nameArrToStr(names)}<br/>
+      created with &hearts; by {this.nameArrToStr(names)}<br/>
       &copy; {startYear} - {new Date().getFullYear()}
     </div>;
   }
