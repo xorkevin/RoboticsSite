@@ -12,7 +12,7 @@ import BlogComponent from '../blog/blog.jsx';
 
 const appProps = {
   config: {
-    creators: ['Kevin'],
+    creators: ['Kevin', 'Cathleen', 'Joanne'],
     startYear: 2015,
     paths: [
       {title: 'Home', path: '/'},
