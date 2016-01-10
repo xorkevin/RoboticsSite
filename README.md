@@ -12,6 +12,7 @@
   - [ ] blog post list fixed, separate scroll
   - [ ] blog landing new design
   - [ ] blog landing show recents
+  - [ ] html for blogs
 - [x] header countdown
   - [ ] need to pass configuration down
 - [ ] front page photo update from flickr
