@@ -22,7 +22,7 @@ const appProps = {
 
     ],
     logo: {img: 'assets/MinimalLogoWeb.png', path: '/'},
-    navHeight: 256
+    navHeight: 64
   },
   countdown: {
     message: 'End of Season',

@@ -43,32 +43,34 @@ class NavComponent extends React.Component {
     // let {dispatch, routePath} = this.props; currently not used
     let {paths, pathsRight, logo} = this.props;
 
-    return <nav className='navbar navbar-default navbar-fixed-top main-nav main-nav-fill-transparent'>
-      <div className='container-fluid'>
+    return <div>
+      <nav className='navbar navbar-default navbar-fixed-top main-nav main-nav-fill-transparent'>
+        <div className='container-fluid'>
 
-        <div className='navbar-header'>
-          <button className='navbar-toggle collapsed' data-toggle='collapse' data-target='#navbar-collapse-1' aria-expanded='false'>
-            <span className='sr-only'>Toggle navigation</span>
-            <span className='icon-bar'></span>
-            <span className='icon-bar'></span>
-            <span className='icon-bar'></span>
-          </button>
-          <a className='navbar-brand' onClick={this.dispatchPath(logo.path)}><img src={logo.img} width='32px' height='32px'/></a>
+          <div className='navbar-header'>
+            <button className='navbar-toggle collapsed' data-toggle='collapse' data-target='#navbar-collapse-1' aria-expanded='false'>
+              <span className='sr-only'>Toggle navigation</span>
+              <span className='icon-bar'></span>
+              <span className='icon-bar'></span>
+              <span className='icon-bar'></span>
+            </button>
+            <a className='navbar-brand' onClick={this.dispatchPath(logo.path)}><img src={logo.img} width='32px' height='32px'/></a>
+          </div>
+
+          <div className='collapse navbar-collapse' id='navbar-collapse-1'>
+            <ul className='nav navbar-nav'>
+              {paths.map((element)=>{
+                return <li><a onClick={this.dispatchPath(element.path)}><h6>{element.title}</h6></a></li>
+              })}
+            </ul>
+
+            <ul className='nav navbar-nav navbar-right'>
+              <li><a><h6>Sponsors</h6></a></li>
+            </ul>
+          </div>
         </div>
-
-        <div className='collapse navbar-collapse' id='navbar-collapse-1'>
-          <ul className='nav navbar-nav'>
-            {paths.map((element)=>{
-              return <li><a onClick={this.dispatchPath(element.path)}><h6>{element.title}</h6></a></li>
-            })}
-          </ul>
-
-          <ul className='nav navbar-nav navbar-right'>
-            <li><a><h6>Sponsors</h6></a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+      </nav>
+    </div>;
   }
 }
 
