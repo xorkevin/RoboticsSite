@@ -19,7 +19,7 @@ const appProps = {
       {title: 'Blog', path: '/blog'}
     ],
     pathsRight: [
-
+      {title: 'Cathleen', path: '/'}
     ],
     logo: {img: 'assets/MinimalLogoWeb.png', path: '/'},
     navHeight: 64
