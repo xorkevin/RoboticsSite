@@ -5,18 +5,10 @@ import HeaderComponent from '../header/header.jsx';
 
 import CountdownComponent from '../countdown/countdown.jsx';
 
-const t = {
-  message: 'End of Season:',
-  endTime: '2016-02-23T23:59:59-08:00',
-  format: 'DD | HH : mm : ss',
-  interval: 500 //in ms
-};
 
 export default class HomeComponent extends React.Component {
   static get route(){
-    return (
-      <Route path='home' component={HomeComponent}/>
-    );
+    return <Route path='home' component={HomeComponent}/>;
   }
 
   render(){
