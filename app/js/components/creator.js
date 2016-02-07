@@ -1,7 +1,8 @@
 import React from 'react';
 
+import './creator.css';
 
-export default class CreatorComponent extends React.Component{
+class Creator extends React.Component{
   nameArrToStr(nameArr){
     let k = '';
     let len = nameArr.length;
@@ -27,13 +28,10 @@ export default class CreatorComponent extends React.Component{
   render(){
     let {names, startYear} = this.props;
     return <div className='creator-text'>
-      <style>
-        .creator-text {
-          font-size: 12px;
-        }
-      </style>
       created with &hearts; by {this.nameArrToStr(names)}<br/>
       &copy; {startYear} - {new Date().getFullYear()}
     </div>;
   }
 }
+
+export {Creator};

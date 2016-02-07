@@ -1,19 +1,18 @@
 import React from 'react';
 import {Route} from 'react-router';
 
-import HeaderComponent from '../header/header.jsx';
+// import HeaderComponent from '../header/header.jsx';
+//
+// import CountdownComponent from '../countdown/countdown.jsx';
 
-import CountdownComponent from '../countdown/countdown.jsx';
 
-
-export default class HomeComponent extends React.Component {
-  static get route(){
+class Home extends React.Component {
+  static route(){
     return <Route path='home' component={HomeComponent}/>;
   }
 
   render(){
     return <div>
-      <HeaderComponent utilitySpace={<span><h5>{t.message}</h5><h4><CountdownComponent endTime={t.endTime} format={t.format} interval={t.interval}/></h4></span>}/>
       <div className="container">
 
         <div className="page-header" id="homeSection-about">
@@ -64,41 +63,31 @@ export default class HomeComponent extends React.Component {
         </div>
         <div className="row">
           <div className="col-sm-4 card-row">
-            <div className="mdl-card card-full-width card-height-resize card-row">
-              <a href="http://www.lockheedmartin.com/" target="_blank">
-                <img src="assets/Sponsors/LockheedMartin.jpg" className="img-responsive"/>
-              </a>
-            </div>
+            <a href="http://www.lockheedmartin.com/" target="_blank">
+              <img src="assets/Sponsors/LockheedMartin.jpg" className="img-responsive"/>
+            </a>
           </div>
           <div className="col-sm-4 card-row">
-            <div className="mdl-card card-full-width card-height-resize card-row">
-              <a href="http://www.intuitivesurgical.com/" target="_blank">
-                <img src="assets/Sponsors/IntuitiveSurgical.jpg" className="img-responsive"/>
-              </a>
-            </div>
+            <a href="http://www.intuitivesurgical.com/" target="_blank">
+              <img src="assets/Sponsors/IntuitiveSurgical.jpg" className="img-responsive"/>
+            </a>
           </div>
           <div className="col-sm-4 card-row">
-            <div className="mdl-card card-full-width card-height-resize card-row">
-              <a href="https://www.qualcomm.com/" target="_blank">
-                <img src="assets/Sponsors/Qualcomm.jpg" className="img-responsive"/>
-              </a>
-            </div>
+            <a href="https://www.qualcomm.com/" target="_blank">
+              <img src="assets/Sponsors/Qualcomm.jpg" className="img-responsive"/>
+            </a>
           </div>
         </div>
         <div className="row">
           <div className="col-sm-4 col-sm-offset-2 card-row">
-            <div className="mdl-card card-full-width card-height-resize card-row">
-              <a href="http://www.venturesfoundation.org/" target="_blank">
-                <img src="assets/Sponsors/pvfoundation.png" className="img-responsive"/>
-              </a>
-            </div>
+            <a href="http://www.venturesfoundation.org/" target="_blank">
+              <img src="assets/Sponsors/pvfoundation.png" className="img-responsive"/>
+            </a>
           </div>
           <div className="col-sm-4 card-row">
-            <div className="mdl-card card-full-width card-height-resize card-row">
-              <a href="http://www.walmart.com/" target="_blank">
-                <img src="assets/Sponsors/Walmart.jpg" className="img-responsive"/>
-              </a>
-            </div>
+            <a href="http://www.walmart.com/" target="_blank">
+              <img src="assets/Sponsors/Walmart.jpg" className="img-responsive"/>
+            </a>
           </div>
         </div>
 
@@ -125,69 +114,57 @@ export default class HomeComponent extends React.Component {
         </div>
         <div className="row">
           <div className="col-md-2 col-xs-4 card-row">
-            <div className="mdl-card card-full-width card-height-resize card-row">
-              <img src="assets/Officers/aakash.jpg" className="img-circle img-responsive"/>
-              <div className="mdl-card__supporting-text card-full-width card-text-black">
-                <h6 className="text-center">Aakash Parikh</h6>
-                <p className="text-center">
-                  President
-                </p>
-              </div>
+            <img src="assets/Officers/aakash.jpg" className="img-circle img-responsive"/>
+            <div className="mdl-card__supporting-text card-full-width card-text-black">
+              <h6 className="text-center">Aakash Parikh</h6>
+              <p className="text-center">
+                President
+              </p>
             </div>
           </div>
           <div className="col-md-2 col-xs-4 card-row">
-            <div className="mdl-card card-full-width card-height-resize card-row">
-              <img src="assets/Officers/justin.jpg" className="img-circle img-responsive"/>
-              <div className="mdl-card__supporting-text card-full-width card-text-black">
-                <h6 className="text-center">Justin Lin</h6>
-                <p className="text-center">
-                  Vice President
-                </p>
-              </div>
+            <img src="assets/Officers/justin.jpg" className="img-circle img-responsive"/>
+            <div className="mdl-card__supporting-text card-full-width card-text-black">
+              <h6 className="text-center">Justin Lin</h6>
+              <p className="text-center">
+                Vice President
+              </p>
             </div>
           </div>
           <div className="col-md-2 col-xs-4 card-row">
-            <div className="mdl-card card-full-width card-height-resize card-row">
-              <img src="assets/Officers/kevin.jpg" className="img-circle img-responsive"/>
-              <div className="mdl-card__supporting-text card-full-width card-text-black">
-                <h6 className="text-center">Kevin Wang</h6>
-                <p className="text-center">
-                  Control Systems Lead
-                </p>
-              </div>
+            <img src="assets/Officers/kevin.jpg" className="img-circle img-responsive"/>
+            <div className="mdl-card__supporting-text card-full-width card-text-black">
+              <h6 className="text-center">Kevin Wang</h6>
+              <p className="text-center">
+                Control Systems Lead
+              </p>
             </div>
           </div>
           <div className="col-md-2 col-xs-4 card-row">
-            <div className="mdl-card card-full-width card-height-resize card-row">
-              <img src="assets/Officers/ammar.jpg" className="img-circle img-responsive"/>
-              <div className="mdl-card__supporting-text card-full-width card-text-black">
-                <h6 className="text-center">Ammar Husain</h6>
-                <p className="text-center">
-                  Mechanical Lead
-                </p>
-              </div>
+            <img src="assets/Officers/ammar.jpg" className="img-circle img-responsive"/>
+            <div className="mdl-card__supporting-text card-full-width card-text-black">
+              <h6 className="text-center">Ammar Husain</h6>
+              <p className="text-center">
+                Mechanical Lead
+              </p>
             </div>
           </div>
           <div className="col-md-2 col-xs-4 card-row">
-            <div className="mdl-card card-full-width card-height-resize card-row">
-              <img src="assets/Officers/jenna.jpg" className="img-circle img-responsive"/>
-              <div className="mdl-card__supporting-text card-full-width card-text-black">
-                <h6 className="text-center">Jenna Wen</h6>
-                <p className="text-center">
-                  Secretary
-                </p>
-              </div>
+            <img src="assets/Officers/jenna.jpg" className="img-circle img-responsive"/>
+            <div className="mdl-card__supporting-text card-full-width card-text-black">
+              <h6 className="text-center">Jenna Wen</h6>
+              <p className="text-center">
+                Secretary
+              </p>
             </div>
           </div>
           <div className="col-md-2 col-xs-4 card-row">
-            <div className="mdl-card card-full-width card-height-resize card-row">
-              <img src="assets/Officers/oliver.jpg" className="img-circle img-responsive"/>
-              <div className="mdl-card__supporting-text card-full-width card-text-black">
-                <h6 className="text-center">Oliver Yang</h6>
-                <p className="text-center">
-                  Treasurer
-                </p>
-              </div>
+            <img src="assets/Officers/oliver.jpg" className="img-circle img-responsive"/>
+            <div className="mdl-card__supporting-text card-full-width card-text-black">
+              <h6 className="text-center">Oliver Yang</h6>
+              <p className="text-center">
+                Treasurer
+              </p>
             </div>
           </div>
         </div>
@@ -196,3 +173,5 @@ export default class HomeComponent extends React.Component {
     </div>
   }
 }
+
+export {Home};

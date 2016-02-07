@@ -1,9 +1,8 @@
+import {Creator} from './creator';
 
-const Components = {};
+const Components = {Creator};
 const Actions = {};
 const Reducers = {};
 
 
-export default {
-  Components, Actions, Reducers
-}
+export {Components, Actions, Reducers};

@@ -23,8 +23,8 @@ const CONFIG = {
 const PATH = {
   HTML: 'app/*.html',
   ASSETS: 'app/assets/**',
-  ALL: ['app/js/*.jsx', 'app/js/**/*.jsx', 'app/index.html'],
-  JS: 'app/js/main.jsx',
+  ALL: ['app/js/*.js', 'app/js/**/*.js', 'app/index.html'],
+  JS: 'app/js/main.js',
   JSDIR: 'app/js',
   MINIFIED_OUT: 'build.min.js',
   DEST: 'dist',
