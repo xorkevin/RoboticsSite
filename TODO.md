@@ -16,3 +16,9 @@
 	- [ ] more photos on front page
 - [ ] timeline
 - [ ] id navigation on page
+
+
+## Refactoring
+- [ ] countdown
+- [ ] nav
+- [ ] header

@@ -10,7 +10,7 @@ import CONFIG from './config';
 import './styles.css';
 
 const {Creator} = Components;
-const {Home} = Views;
+const {DoesNotExist, Home} = Views;
 
 const {creators, copyright} = CONFIG;
 
@@ -18,6 +18,8 @@ class App extends React.Component{
   static route(){
     return <Route path='/' component={App}>
       <IndexRoute component={Home}/>
+      {DoesNotExist.route()}
+      {DoesNotExist.redirect()}
     </Route>;
   }
 
@@ -30,4 +32,4 @@ class App extends React.Component{
 }
 
 
-export {App, Reducers}
+export {App, Reducers};
