@@ -1,6 +1,10 @@
 import React from 'react';
 
-import './creator.css';
+const style = {
+  creatorText: {
+    fontSize: '12px'
+  }
+}
 
 class Creator extends React.Component{
   nameArrToStr(nameArr){
@@ -26,10 +30,10 @@ class Creator extends React.Component{
   }
 
   render(){
-    let {names, startYear} = this.props;
-    return <div className='creator-text'>
+    let {names, copyright} = this.props.config;
+    return <div style={style.creatorText}>
       created with &hearts; by {this.nameArrToStr(names)}<br/>
-      &copy; {startYear} - {new Date().getFullYear()}
+      &copy; {copyright} - {new Date().getFullYear()}
     </div>;
   }
 }

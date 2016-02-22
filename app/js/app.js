@@ -12,7 +12,7 @@ import './styles.css';
 const {Creator} = Components;
 const {DoesNotExist, Home} = Views;
 
-const {creators, copyright} = CONFIG;
+const {creator} = CONFIG;
 
 class App extends React.Component{
   static route(){
@@ -26,7 +26,7 @@ class App extends React.Component{
   render(){
     return <div className='app'>
       {this.props.children}
-      <Creator names={creators} startYear={copyright}/>
+      <Creator config={creator}/>
     </div>;
   }
 }
