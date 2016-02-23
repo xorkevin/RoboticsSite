@@ -23,3 +23,5 @@
 - [ ] nav
 - [ ] header
 - [ ] eliminate dependencies on bootstrap and mdl; use milligram
+- [ ] use draft.js for text editing
+
